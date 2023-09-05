@@ -6,7 +6,17 @@ btn.addEventListener('mouseover',(e)=>{
     document.querySelector('body').classList.add('bg-dark');
 
 })
-btn.addEventListener('mouseout',(e)=>{
+// btn.addEventListener('mouseout',(e)=>{
+//     e.preventDefault()
+//     document.querySelector('body').classList.add('magenta');
+// })
+btn.addEventListener('click',store);
+
+function store (e){
     e.preventDefault()
-    document.querySelector('body').classList.add('magenta');
-})
+    var namee=document.querySelector('#name')
+    var email=document.getElementById('email')
+    
+    localStorage.setItem('Name',namee.value)
+    localStorage.setItem('email',email.value)
+}
