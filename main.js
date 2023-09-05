@@ -13,10 +13,15 @@ btn.addEventListener('mouseover',(e)=>{
 btn.addEventListener('click',store);
 
 function store (e){
-    e.preventDefault()
+    
     var namee=document.querySelector('#name')
     var email=document.getElementById('email')
+    obj1={
+        "Name":namee.value,
+        "Email": email.value
+    }
+    obj1_ser = JSON.stringify(obj1)
+    localStorage.setItem('Obj1',obj1_ser)
+    obj1_deser = JSON.parse(localStorage.getItem(obj1))
     
-    localStorage.setItem('Name',namee.value)
-    localStorage.setItem('email',email.value)
 }
